@@ -33,15 +33,11 @@ public class Algorithms {
         System.out.println(divided35);
     }
 
-    public static void compareNumbers() {
+    public static void compareNumbers(int a, int b, int c) {
         boolean isBigger = false;
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите первое число:");
-        int a = scanner.nextInt();
-        System.out.println("Введите второе число:");
-        int b = scanner.nextInt();
-        System.out.println("Введите третье число:");
-        int c = scanner.nextInt();
+        System.out.println("Введите первое число:" + a);
+        System.out.println("Введите второе число:" + b);
+        System.out.println("Введите третье число:" + c);
 
         if ((b > a) && (c > b)) {
             isBigger = true;
@@ -88,7 +84,7 @@ public class Algorithms {
         System.out.println("Array 2: " + Arrays.toString(array));
     }
 
-    public static int uniqueNumber(int[] array) {
+    public static Integer uniqueNumber(int[] array) {
         for (int i = 0; i < array.length; i++) {
             int count = 0;
             for (int n = 0; n < array.length; n++) {
@@ -100,7 +96,7 @@ public class Algorithms {
                 return array[i];
             }
         }
-        return -1;
+        return null;
     }
 
     public static void mergeSort(int[] array) {
