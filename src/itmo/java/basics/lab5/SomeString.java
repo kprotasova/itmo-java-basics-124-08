@@ -16,7 +16,7 @@ public class SomeString {
         return longestWord;
     }
 
-    public static boolean isPalindrome (String word) {
+    /* public static boolean isPalindrome (String word) {
         word = word.toLowerCase();
         boolean isPalindrome = true;
         String[] characters = word.split("");
@@ -31,6 +31,14 @@ public class SomeString {
             }
         }
         return isPalindrome;
+    } */
+
+    public static boolean isPalindrome (String word) {
+        word = word.toLowerCase();
+        boolean isPalindrome = true;
+        StringBuilder unchanged = new StringBuilder(word);
+        StringBuilder reversed = new StringBuilder(word).reverse();
+        return (0 == unchanged.compareTo(reversed));
     }
 
     public static String toCensored(String text, String find, String replacement) {
