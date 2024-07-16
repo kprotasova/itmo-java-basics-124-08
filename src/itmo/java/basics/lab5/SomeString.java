@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class SomeString {
 
     public static String theLongestWord (String text) {
+
         String longestWord = "";
         String[] words = text.split("[\\s,.?!;:\\-]+");
         for (String w : words) {
@@ -16,6 +17,7 @@ public class SomeString {
     }
 
     public static boolean isPalindrome (String word) {
+        word = word.toLowerCase();
         boolean isPalindrome = true;
         String[] characters = word.split("");
         String[] newCharacters = new String[characters.length];
@@ -31,10 +33,10 @@ public class SomeString {
         return isPalindrome;
     }
 
-    public static String toCensored(String text) {
+    public static String toCensored(String text, String find, String replacement) {
         String newText = text;
-        if (text.contains("бяка")) {
-            newText = text.replace("бяка", "[вырезано цензурой]");
+        if (text.contains(find)) {
+            newText = text.replace(find, replacement);
         }
         return newText;
     }
@@ -64,6 +66,7 @@ public class SomeString {
    }
 
     public static void main(String[] args) {
+        System.out.println (isPalindrome("Потоп"));
         System.out.println(theLongestWord("Написать метод для поиска самого длинного слова в тексте. Hello word! London is the capital of Great Britain. yrasextdcrfzvtgubhnjmk?"));
         String words = "faghf, wadesfdgh, sawdfg";
         String words2 = "faghf,wadesfdgh,sawdfg";
